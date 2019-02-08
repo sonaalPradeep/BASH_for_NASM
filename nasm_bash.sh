@@ -20,7 +20,7 @@ then
 	#COMMENT THE FOLLOWING LINE FOR 64-BIT SYSTEMS...
 #	ld $OBJF -o $EXEC
 
-	./EXEC
+	./$EXEC
 
 elif [ $# -eq 3 ]
 then
@@ -36,7 +36,7 @@ then
 	#COMMENT THE FOLLOWING LINE FOR 64-BIT SYSTEMS...
 #	ld $OBJF -o $EXEC
 
-	./EXEC
+	./$EXEC
 	
 else
 	echo "The following argument set is invalid."
