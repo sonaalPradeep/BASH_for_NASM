@@ -2,7 +2,7 @@
 
 if [ $# -eq 0 ]
 then 
-	echo "NOTE! : If this is the first time you are using the script, please configure it for your system. Please read the README.txt for further information."
+	echo "$0: NOTE! : If this is the first time you are using the script, please configure it for your system. Please read the README.txt for further information."
 	echo "Hello $USER! You can run this script by using 2 methods."
 	echo "You can provide 3 arguments while executing the script. The arguments will be the name of your code (.asm) file, object file and executable along with their respective extensions."
 	echo "Otherwise, you can just enter the name of your code file."
@@ -20,10 +20,10 @@ then
 
 		if [ -f *.asm ]
 		then
-			echo ".asm file couldn't be found. The following file(s) were found in the present directory :"
+			echo "$0: The provided (.asm) file couldn't be found. The following file(s) were found in the present directory :"
 			ls *.asm
 		else
-			echo "No .asm files found in this directory."
+			echo "$0: No (.asm) files found in this directory."
 		fi
 
 		exit 1
@@ -37,7 +37,7 @@ then
 		#COMMENT THE FOLLOWING LINE FOR 64-BIT SYSTEMS...
 	#	ld $OBJF -o $EXEC
 	else
-		echo "Object file not found. Please check for compilation errors in your program."
+		echo "$0: Object file not found. Please check for compilation errors in your program."
 		exit 1
 	fi
 
@@ -45,7 +45,7 @@ then
 	then
 		./$EXEC
 	else
-		echo "Executable not found."
+		echo "$0 Executable not found."
 		exit 1
 	fi
 
@@ -63,10 +63,10 @@ then
 
 		if [ -f *.asm ]
 		then
-			echo ".asm file couldn't be found. The following files were found in the present directory :"
+			echo "$0: The (.asm) file couldn't be found. The following files were found in the present directory :"
 			ls *.asm
 		else
-			echo "No .asm files found in this directory."
+			echo "$0: No .asm files found in this directory."
 		fi
 
 		exit 1
@@ -80,11 +80,11 @@ then
 		#COMMENT THE FOLLOWING LINE FOR 64-BIT SYSTEMS...
 	#	ld $OBJF -o $EXEC
 	else
-		echo "Object file not found. Please check for compilation errors, and make sure you have given the correct name for the object file."
+		echo "$0: Object file not found. Please check for compilation errors, and make sure you have given the correct name for the object file."
 
 		if [ -f *.o ]
 		then 
-			echo "If your program compiled without any errors, your object files is one of these : "
+			echo "$0: If your program compiled without any errors, your object files is one of these : "
 			ls *.o
 		fi
 
@@ -95,12 +95,12 @@ then
 	then
 		./$EXEC
 	else
-		echo "Executable not found."
+		echo "$0: Executable not found."
 		exit 1
 	fi
 	
 else
-	echo "The following argument set is invalid."
-	echo "Please run the script without any arguments for help"
+	echo "$0: The following argument set is invalid."
+	echo "$0: Please run the script without any arguments for help"
 fi
 
