@@ -17,8 +17,15 @@ then
 	then
 		nasm -f elf $CODE
 	else
-		echo ".asm file couldn't be found. The following file(s) were found in the present directory :"
-		ls *.asm
+
+		if [ -f *.asm ]
+		then
+			echo ".asm file couldn't be found. The following file(s) were found in the present directory :"
+			ls *.asm
+		else
+			echo "No .asm files found in this directory."
+		fi
+
 		exit 1
 	fi
 	
@@ -53,8 +60,15 @@ then
 	then
 		nasm -f elf $CODE
 	else
-		echo ".asm file couldn't be found. The following files were found in the present directory :"
-		ls *.asm
+
+		if [ -f *.asm ]
+		then
+			echo ".asm file couldn't be found. The following files were found in the present directory :"
+			ls *.asm
+		else
+			echo "No .asm files found in this directory."
+		fi
+
 		exit 1
 	fi
 
@@ -67,8 +81,13 @@ then
 	#	ld $OBJF -o $EXEC
 	else
 		echo "Object file not found. Please check for compilation errors, and make sure you have given the correct name for the object file."
-		echo "If your program compiled without any errors, your object files is one of these : "
-		ls *.o
+
+		if [ -f *.o ]
+		then 
+			echo "If your program compiled without any errors, your object files is one of these : "
+			ls *.o
+		fi
+
 		exit 1
 	fi
 	
