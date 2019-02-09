@@ -13,14 +13,34 @@ then
 	OBJF=$1.o
 	EXEC=out_$1
 
-	nasm -f elf $CODE
-	#COMMENT THE FOLLOWING LINE FOR 32-BIT SYSTEMS...
-#	ld -melf_i386 $OBJF -o $EXEC
+	if [ -f $CODE ]
+	then
+		nasm -f elf $CODE
+	else
+		echo ".asm file couldn't be found. The following file(s) were found in the present directory :"
+		ls *.asm
+		exit 1
+	fi
+	
+	if [ -f $OBJF ]
+	then
+		#COMMENT THE FOLLOWING LINE FOR 32-BIT SYSTEMS...
+	#	ld -melf_i386 $OBJF -o $EXEC
 
-	#COMMENT THE FOLLOWING LINE FOR 64-BIT SYSTEMS...
-#	ld $OBJF -o $EXEC
+		#COMMENT THE FOLLOWING LINE FOR 64-BIT SYSTEMS...
+	#	ld $OBJF -o $EXEC
+	else
+		echo "Object file not found. Please check for compilation errors in your program."
+		exit 1
+	fi
 
-	./$EXEC
+	if [ -f $EXEC ]
+	then
+		./$EXEC
+	else
+		echo "Executable not found."
+		exit 1
+	fi
 
 elif [ $# -eq 3 ]
 then
@@ -29,14 +49,36 @@ then
 	OBJF=$2
 	EXEC=$3
 	
-	nasm -f elf $CODE
-	#COMMENT THE FOLLOWING LINE FOR 32-BIT SYSTEMS...
-#	ld -melf_i386 $OBJF -o $EXEC
+	if [ -f $CODE ]
+	then
+		nasm -f elf $CODE
+	else
+		echo ".asm file couldn't be found. The following files were found in the present directory :"
+		ls *.asm
+		exit 1
+	fi
 
-	#COMMENT THE FOLLOWING LINE FOR 64-BIT SYSTEMS...
-#	ld $OBJF -o $EXEC
+	if [ -f $OBJF ]
+	then
+		#COMMENT THE FOLLOWING LINE FOR 32-BIT SYSTEMS...
+	#	ld -melf_i386 $OBJF -o $EXEC
 
-	./$EXEC
+		#COMMENT THE FOLLOWING LINE FOR 64-BIT SYSTEMS...
+	#	ld $OBJF -o $EXEC
+	else
+		echo "Object file not found. Please check for compilation errors, and make sure you have given the correct name for the object file."
+		echo "If your program compiled without any errors, your object files is one of these : "
+		ls *.o
+		exit 1
+	fi
+	
+	if [ -f $EXEC ]
+	then
+		./$EXEC
+	else
+		echo "Executable not found."
+		exit 1
+	fi
 	
 else
 	echo "The following argument set is invalid."
