@@ -1,15 +1,36 @@
 #!/bin/bash
+#
+#clear
+
 if [ $1 = "-v" ]
 then
 	echo "BASH SCRIPT FOR ASSEMBLING AND EXECUTING NASM CODES"
 	echo -e "\t\t\t\t\tby Sonaal P. Pradeep"
 	echo "Version 1.0"
-	echo "Last updated on the 9th of February, 2019"
-	echo "\"Built for the lazy ones who need clever solutions.\""
+	echo "Last updated on the 12th of February, 2019"
+	echo "\"Built by the lazy one who needed a solution.\""
 	echo "Thanks a lot for using my code! :D"
 	exit 1
 fi
 
+if [ ! -f /usr/bin/nasm ]
+then
+	echo "$0: NASM assembler not found on this system."
+	echo "Would to like to download (Y/N) : "
+	read p
+
+	if [ $p = 'y' ]  || [ $p = 'Y' ]
+	then
+		sudo apt-get nasm
+		echo "Please restart the script again."
+	else
+		echo "Download aborted."
+	fi
+
+	exit 1
+fi
+
+	
 if [ $# -eq 0 ]
 then 
 	echo "$0: NOTE! : If this is the first time you are using the script, please configure it for your system. Please read the README.txt for further information."
@@ -42,7 +63,7 @@ then
 	if [ -f $OBJF ]
 	then
 		#COMMENT THE FOLLOWING LINE FOR 32-BIT SYSTEMS...
-	#	ld -melf_i386 $OBJF -o $EXEC
+		ld -melf_i386 $OBJF -o $EXEC
 
 		#COMMENT THE FOLLOWING LINE FOR 64-BIT SYSTEMS...
 	#	ld $OBJF -o $EXEC
@@ -85,7 +106,7 @@ then
 	if [ -f $OBJF ]
 	then
 		#COMMENT THE FOLLOWING LINE FOR 32-BIT SYSTEMS...
-	#	ld -melf_i386 $OBJF -o $EXEC
+		ld -melf_i386 $OBJF -o $EXEC
 
 		#COMMENT THE FOLLOWING LINE FOR 64-BIT SYSTEMS...
 	#	ld $OBJF -o $EXEC
