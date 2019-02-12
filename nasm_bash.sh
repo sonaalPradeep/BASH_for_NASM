@@ -6,7 +6,7 @@ if [ $1 = "-v" ]
 then
 	echo "BASH SCRIPT FOR ASSEMBLING AND EXECUTING NASM CODES"
 	echo -e "\t\t\t\t\tby Sonaal P. Pradeep"
-	echo "Version 1.0"
+	echo "Version 1.1.0"
 	echo "Last updated on the 12th of February, 2019"
 	echo "\"Built by the lazy one who needed a solution.\""
 	echo "Thanks a lot for using my code! :D"
