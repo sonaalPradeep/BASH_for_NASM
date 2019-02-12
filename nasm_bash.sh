@@ -63,7 +63,7 @@ then
 	if [ -f $OBJF ]
 	then
 		#COMMENT THE FOLLOWING LINE FOR 32-BIT SYSTEMS...
-		ld -melf_i386 $OBJF -o $EXEC
+	#	ld -melf_i386 $OBJF -o $EXEC
 
 		#COMMENT THE FOLLOWING LINE FOR 64-BIT SYSTEMS...
 	#	ld $OBJF -o $EXEC
@@ -106,7 +106,7 @@ then
 	if [ -f $OBJF ]
 	then
 		#COMMENT THE FOLLOWING LINE FOR 32-BIT SYSTEMS...
-		ld -melf_i386 $OBJF -o $EXEC
+	#	ld -melf_i386 $OBJF -o $EXEC
 
 		#COMMENT THE FOLLOWING LINE FOR 64-BIT SYSTEMS...
 	#	ld $OBJF -o $EXEC
