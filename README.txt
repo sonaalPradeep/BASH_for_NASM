@@ -1,10 +1,11 @@
 NASM BASH SCRIPT ASSEMBLER AND EXECUTER			-by Sonaal P. Pradeep
+Last Updated on 17th February 2018
 
 # Statements starting with a '#' are comments, as a note to the reader.
 # Statements in between < ... > are commands. Type them without putting the brackets.
 # Statements in between " ... " are names.
 
-# Thank you for taking your time for reading and/or using this bsah script which I honestly had no intention to push onto GitHub. This was purely just a project for fun to just solve my laziness issue. Yes I have become too lazy to run 3 lines of code that I would just prefer to write one. Never-the-less, I am really happy with how the code stands right now, and feel free to use it and break it in any way possible. Again, thank you soo much, it means a lot. Feel free to let me know for further modifications. 
+# Thank you for taking your time for reading and/or using this bash script which I honestly had no intention to push onto GitHub. This was purely just a project for fun to just solve my laziness. Yes I have now realised many people aren't as lazy as me, too lazy to run 3 lines of code with few key strokes. I would just prefer to write one. Never-the-less, I am really happy with how the code stands right now, and feel free to use it and break it in any way possible. Again, thank you soo much, it means a lot. Feel free to let me know for further modifications. 
 
 
 INSTRUCTIONS FOR CONFIGURING FILE
@@ -18,10 +19,11 @@ EXECUTING THE SCRIPT
 Pull the script into the directory that has your program. If the script is not an executable, type <chmod +x nasm_bash.sh>.
 You can run the executable by typing <./nasm_bash.sh>. After this, you will need to enter the arguments of the file.
 
-You can either enter one arguemnt, or 3 arguments. If you are entering one argument, make sure you enter the file name without the extension.
-For example, if your program is saved in "q1.asm", you type <./nasm_bash q1>. Your object file will be "q1.o" and the executable will be "out_q1".
-# NASM requires your file name and object name to be the same. So if your file name is "q1.asm", your object name is "q1.o", and other options will lead to an error.
+You can either enter one arguemnt, or 3 arguments. If you are entering one argument, you can enter the file name with or without the extension.
+For example, if your program is saved in "q1.asm", you type <./nasm_bash q1>. Your object file will be "q1.o" and the executable will be "out_q1". The same results will now be reciprocated when you type <./nasm_bash q1.asm>.
 
 Alternatively, you can enter 3 arguments. As you would guess, you now have the freedom to give the names if the object file and the executable. Please note that you need to give the arguments of the files this time.
+
+# NASM requires your file name and object name to be the same. So if your file name is "q1.asm", your object name is "q1.o", and other options will lead to an error.
 
 
