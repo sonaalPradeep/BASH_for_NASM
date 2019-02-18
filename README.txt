@@ -1,5 +1,6 @@
 NASM BASH SCRIPT ASSEMBLER AND EXECUTER			-by Sonaal P. Pradeep
-Last Updated on 17th February 2018
+Last Updated on 18th February 2018
+#As of the last updated date, this project stands closed.
 
 # Statements starting with a '#' are comments, as a note to the reader.
 # Statements in between < ... > are commands. Type them without putting the brackets.
@@ -11,7 +12,7 @@ Last Updated on 17th February 2018
 INSTRUCTIONS FOR CONFIGURING FILE
 
 The configuration of the bash script is simple. It is based on whether you are using a 32- or a 64-bit system. If you are using a 32-bit system, find the 2 instances which says "# Comment the following for 32-bit systems" and comment the line below it (by inserting a '#' to the front). Similarly for the 64-bit systems. Make sure that only one of your options is enabled.
-# This only works for Linux. Stay tuned for the new version that would also support the MacOS.
+# This script only works for Linux.
 
 
 EXECUTING THE SCRIPT
