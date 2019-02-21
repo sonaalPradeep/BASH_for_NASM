@@ -6,8 +6,8 @@ if [ $1 = "-v" ]
 then
 	echo "BASH SCRIPT FOR ASSEMBLING AND EXECUTING NASM CODES"
 	echo -e "\t\t\t\t\tby Sonaal P. Pradeep"
-	echo "Version 1.1.1"
-	echo "Last updated on the 18th of February, 2019"
+	echo "Version 1.1.2"
+	echo "Last updated on the 21st of February, 2019"
 	echo "\"Built by the lazy one who needed a solution.\""
 	echo "Thanks a lot for using my code! :D"
 	exit 1
@@ -58,7 +58,7 @@ then
 		nasm -f elf $CODE
 	else
 
-		if [ -f *.asm ]
+		if [ -n "$(echo *.asm)" ]
 		then
 			echo "$0: The provided (.asm) file couldn't be found. The following file(s) were found in the present directory :"
 			ls *.asm
@@ -85,7 +85,7 @@ then
 	then
 		./$EXEC
 	else
-		echo "$0 Executable not found."
+		echo "$0: Executable not found."
 		exit 1
 	fi
 
@@ -101,7 +101,7 @@ then
 		nasm -f elf $CODE
 	else
 
-		if [ -f *.asm ]
+		if [ -n "$(echo *.asm)" ]
 		then
 			echo "$0: The (.asm) file couldn't be found. The following files were found in the present directory :"
 			ls *.asm
@@ -141,6 +141,6 @@ then
 	
 else
 	echo "$0: The following argument set is invalid."
-	echo "$0: Please run the script without any arguments for help"
+	echo "Please run the script without any arguments for help"
 fi
 
