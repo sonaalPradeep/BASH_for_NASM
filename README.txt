@@ -1,12 +1,11 @@
 NASM BASH SCRIPT ASSEMBLER AND EXECUTER			-by Sonaal P. Pradeep
 Last Updated on 18th February 2018
-#As of the last updated date, this project stands closed.
 
 # Statements starting with a '#' are comments, as a note to the reader.
 # Statements in between < ... > are commands. Type them without putting the brackets.
 # Statements in between " ... " are names.
 
-# Thank you for taking your time for reading and/or using this bash script which I honestly had no intention to push onto GitHub. This was purely just a project for fun to just solve my laziness. Yes I have now realised many people aren't as lazy as me, too lazy to run 3 lines of code with few key strokes. I would just prefer to write one. Never-the-less, I am really happy with how the code stands right now, and feel free to use it and break it in any way possible. Again, thank you soo much, it means a lot. Feel free to let me know for further modifications. 
+# Thank you for taking your time for reading and/or using this bash script which I honestly had no intention to push onto GitHub. This was purely just a project for fun to just solve my laziness.
 
 
 INSTRUCTIONS FOR CONFIGURING FILE
